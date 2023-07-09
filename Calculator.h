@@ -100,6 +100,14 @@ private:
 			operations[2]->Compute(number1, number2);
 			break;
 		case '/':
+			try {
+				if (number2 == 0) throw "Divison by 0 is not allowed.\n";
+			}
+			catch (const char* exc) {
+				cout << exc;
+				numbersToBeComputed.clear();
+				readNumber1();
+			}
 			operations[3]->Compute(number1, number2);
 			break;
 		case '^':
